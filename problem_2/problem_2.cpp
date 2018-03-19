@@ -14,14 +14,14 @@ int find_rank(string word,int n)
     sort(word.begin(),word.end());
 
 
-    while(next_permutation(word.begin(),word.end())
+    do
           {
               rank++;
-              if(next_permutation(word.begin(),word.end()) == word)
+              if(strcmp(next_permutation(word.begin(),word.end()) ,word)== 0)
               {
                   break;
               }
-          }
+          }while(next_permutation(word.begin(),word.end()));
 
     return rank;
 }
@@ -36,7 +36,7 @@ main()
     {
         cin>>array[i];
     }
-    char word[50];
+    string word;
     cout<<"\nEnter word :"
     cin>>word;
     int rank;
